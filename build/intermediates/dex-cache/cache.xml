@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/home/incode8/Desktop/Weather/Weather/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="1f132b96f1f675fc7bbf3773f80350e0c47e30a6">
+        <dex dex="/home/incode8/Desktop/Weather/Weather/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_f434ab028efd2658497e5f15aee9d4ee99a3cfb2/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/incode8/Desktop/Weather/Weather/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="/home/incode8/Desktop/Weather/Weather/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_32663f1b60d4bfea2b5e1e6865e1f5a198346e36/classes.dex" />
+    </item>
+
+</items>
