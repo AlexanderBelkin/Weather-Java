@@ -51,16 +51,9 @@ public abstract class BaseActivity extends AppCompatActivity
         mUnBinder = unBinder;
     }
 
-
-
     @Override
     public boolean networkConnected() {
         return NetworkUtils.networkConnected(getApplicationContext());
-    }
-
-    @Override
-    public void showMessage(String messageString) {
-
     }
 
     @Override
