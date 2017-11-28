@@ -8,4 +8,10 @@ import com.example.incode8.weather.ui.base.IBaseView;
 
 public interface IWeatherView extends IBaseView {
 
+    int getTime();
+
+    void showDayFragment();
+
+    void showWeekFragment();
+
 }

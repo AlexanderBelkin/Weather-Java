@@ -2,22 +2,355 @@
 <items version="2" >
 
     <item
-        is-multidex="true"
-        jar="/home/incode8/Desktop/WeatherApp/weather/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/home/incode8/.gradle/caches/modules-2/files-2.1/io.reactivex/rxjava/1.3.0/af000bec2036a2a9d07197c4b03b8966bfc60b03/rxjava-1.3.0.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="e12415e8e7de69791fb08b4e7d073dd66a59b4b6">
-        <dex dex="/home/incode8/Desktop/WeatherApp/weather/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_87491b36d86df4ff5a47593701818e65327d9616/classes.dex" />
+        sha1="af000bec2036a2a9d07197c4b03b8966bfc60b03">
+        <dex dex="/home/incode8/Desktop/Weather/weather/app/build/intermediates/pre-dexed/debug/rxjava-1.3.0_30e9b3882d3f6914a42557af27a676a6b7b28ba9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/incode8/.android/build-cache/ab5e09cf7ea08b321fc13e17aeb301567524c20d/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f229aae65e61058c88acb3ad14978b8997c77608">
+        <dex dex="/home/incode8/Desktop/Weather/weather/app/build/intermediates/pre-dexed/debug/classes_263b0653ddf58ab0c49166f98915e43f828f4cfa.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/incode8/.android/build-cache/ae4ec69ddae5b3cfeb0c64a4b91f12b864b8230a/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="4119ea97a7191ff9b8f33b534ea220448f62f491">
+        <dex dex="/home/incode8/Desktop/Weather/weather/app/build/intermediates/pre-dexed/debug/classes_577fe13206e7468353f9fcf43c4accc8b98b6c04.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/incode8/.android/build-cache/5e7bc47b9d2648021a84c1e6274d659739d5a464/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d4cf6227dd6a2ceff0f7dcf0c324380b7abf2c28">
+        <dex dex="/home/incode8/Desktop/Weather/weather/app/build/intermediates/pre-dexed/debug/classes_006bbe143d54a607b33bb2163d2ed043a637a508.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/incode8/.android/build-cache/da1a3d04b79a3fe089d1858a72ff50e66a17e5ff/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ebcb0bcf52fab7c586f39717f7cb8de91748b1b1">
+        <dex dex="/home/incode8/Desktop/Weather/weather/app/build/intermediates/pre-dexed/debug/classes_96727367b2ea7b797a91cc9af9da353faa5085d9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/incode8/.android/build-cache/4f7bd02f386fc8c620962b52fa2fd7f593f34d67/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f5d09340b2b840a887f07a09e88ef3c87400064b">
+        <dex dex="/home/incode8/Desktop/Weather/weather/app/build/intermediates/pre-dexed/debug/classes_995f3a9d74979b270e66b5ef16763f02c70b1c85.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/incode8/.android/build-cache/507cbdf7e67c82d15057f1855643f98ae5346c52/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="78ea232052df889856dcb7b7b542707c89bb3bfb">
+        <dex dex="/home/incode8/Desktop/Weather/weather/app/build/intermediates/pre-dexed/debug/classes_79763bdf0e11d382d994bae33fc3c5108b351823.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/incode8/.android/build-cache/1895302af163e2d1bd25c648126f835e7befc3d3/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
+        <dex dex="/home/incode8/Desktop/Weather/weather/app/build/intermediates/pre-dexed/debug/classes_3c9f256cda0d8713e79d79e0d66c053929c9c896.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/incode8/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/adapter-rxjava/2.3.0/43e4ac24adc40a24c51b2d2a71a2483ef1b0ce9a/adapter-rxjava-2.3.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="43e4ac24adc40a24c51b2d2a71a2483ef1b0ce9a">
+        <dex dex="/home/incode8/Desktop/Weather/weather/app/build/intermediates/pre-dexed/debug/adapter-rxjava-2.3.0_02663cecd81fdb30649b948f72d7a33e5314310a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/incode8/.android/build-cache/eda8ba6b55e8dc753a9dba7ca9b84953f2d323ec/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="/home/incode8/Desktop/Weather/weather/app/build/intermediates/pre-dexed/debug/classes_ad4a5c7e48bc588f487c8ebef500d95b369c1e6a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/incode8/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/adapter-rxjava2/2.3.0/f436637f9500ab5b8bc32afe556373180894b4a5/adapter-rxjava2-2.3.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f436637f9500ab5b8bc32afe556373180894b4a5">
+        <dex dex="/home/incode8/Desktop/Weather/weather/app/build/intermediates/pre-dexed/debug/adapter-rxjava2-2.3.0_2b0795b15989557ec8745e9065aa579fccbf00dc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/incode8/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife-annotations/8.6.0/48efa6f14074e1a6b16e02ac05eba3fc5c7c7ec8/butterknife-annotations-8.6.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="48efa6f14074e1a6b16e02ac05eba3fc5c7c7ec8">
+        <dex dex="/home/incode8/Desktop/Weather/weather/app/build/intermediates/pre-dexed/debug/butterknife-annotations-8.6.0_f3d29d65db7b73628f47cc70e2a9bc1ece01c674.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/incode8/.android/build-cache/2c76b400b779ea76cf6a74063c99d6a00b107fb0/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d9f58e509a3ff5b601c11ab5ec588c96f9eb82b2">
+        <dex dex="/home/incode8/Desktop/Weather/weather/app/build/intermediates/pre-dexed/debug/classes_9cd538f6ef790bf3edc1772552204c3d7c8f8a9d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/incode8/.android/build-cache/1b7b22b0b66e6d5b9875742acae32f326d824035/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
+        <dex dex="/home/incode8/Desktop/Weather/weather/app/build/intermediates/pre-dexed/debug/classes_f35cb31f495114b57c729c5d50c4c4c9528a1637.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/incode8/.android/build-cache/afa1e2b5e54e71f33743effc03bb1ed4a399e859/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="be587097e648eabfb7f9eca23ab03369894e2d5d">
+        <dex dex="/home/incode8/Desktop/Weather/weather/app/build/intermediates/pre-dexed/debug/classes_ffbd8c71cf27fa068969db15f7ed5e51fe86c49e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/incode8/.android/build-cache/35fac23772439669d5abbf9548af3bafb379abcc/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="95519720620b553f63afc789beba9ad582807f7c">
+        <dex dex="/home/incode8/Desktop/Weather/weather/app/build/intermediates/pre-dexed/debug/classes_7f86b9c01da8ae75a489626924fd47486a31ea5c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/incode8/.android/build-cache/e785c0f8555a6b2e37a732be2a4795fbc9568079/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
+        <dex dex="/home/incode8/Desktop/Weather/weather/app/build/intermediates/pre-dexed/debug/classes_ea9d97908c6d971b259fea20101ee4fd697a85bc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/incode8/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/retrofit/2.3.0/bcacde6a8ccedcc56c127403d26b76072fe6214d/retrofit-2.3.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="bcacde6a8ccedcc56c127403d26b76072fe6214d">
+        <dex dex="/home/incode8/Desktop/Weather/weather/app/build/intermediates/pre-dexed/debug/retrofit-2.3.0_4494eacdc109ad144790b3a6b504bd1e7b1a843c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/incode8/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.8.0/5a11f020cce2d11eb71ba916700600e18c4547e7/okhttp-3.8.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="5a11f020cce2d11eb71ba916700600e18c4547e7">
+        <dex dex="/home/incode8/Desktop/Weather/weather/app/build/intermediates/pre-dexed/debug/okhttp-3.8.0_f78657bf606ffd4c66dbaba67dc453a7a8691af2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/incode8/Android/Sdk/extras/m2repository/com/android/support/constraint/constraint-layout-solver/1.0.2/constraint-layout-solver-1.0.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="/home/incode8/Desktop/Weather/weather/app/build/intermediates/pre-dexed/debug/constraint-layout-solver-1.0.2_2941fadcdf214375d3ed2207074cd7af4c6f938d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/incode8/.android/build-cache/97d8ffae955eb96c2ee450f19c8fa25f4041350d/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c74c28a44292b6480afe69ddb2c0974f45393a3a">
+        <dex dex="/home/incode8/Desktop/Weather/weather/app/build/intermediates/pre-dexed/debug/classes_3742b64d4c12f34ebcb708d5a6b0f603f5e1ecf6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/incode8/.android/build-cache/5d196700e613eb98ef53b9578e93c55fbbc3e14d/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="914f5d3e3ace66080e59613708f06d129a222e25">
+        <dex dex="/home/incode8/Desktop/Weather/weather/app/build/intermediates/pre-dexed/debug/classes_5b1b7505707d79b39534e4df07ff40dd955194ed.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/incode8/.android/build-cache/927dca40c5ce2011f483d274d936d8d94628db73/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
+        <dex dex="/home/incode8/Desktop/Weather/weather/app/build/intermediates/pre-dexed/debug/classes_2b4190211cf3408d421837066d8530f3dd447c32.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/incode8/.android/build-cache/9d2a13712dac432dd5d354bc5593d106913b9fa2/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
+        <dex dex="/home/incode8/Desktop/Weather/weather/app/build/intermediates/pre-dexed/debug/classes_8229f4ae47e7fa8bd0fdf4c590ea214104207591.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/incode8/.android/build-cache/e8a4711dd39006711f7688679e01179d658413c9/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
+        <dex dex="/home/incode8/Desktop/Weather/weather/app/build/intermediates/pre-dexed/debug/classes_5f9a3f4e8d91da10df20d788946c9c7d08204e8e.jar" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/incode8/Desktop/WeatherApp/weather/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jar="/home/incode8/Desktop/Weather/weather/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="223ac6394ec984fa6820633f32476a2427d35186">
+        <dex dex="/home/incode8/Desktop/Weather/weather/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_16965b792c468849835638e0e9e909e525589064/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/incode8/.android/build-cache/9a958af559bdf760cf3ee0b81bf306941cc19294/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
+        <dex dex="/home/incode8/Desktop/Weather/weather/app/build/intermediates/pre-dexed/debug/classes_5e60f072a58604adfadb2fb177c02e1e1c8ae6c3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/incode8/.gradle/caches/modules-2/files-2.1/io.reactivex.rxjava2/rxjava/2.1.0/2fdf84dedcaaeabb9d70cde9dbb8aad4eccb80a1/rxjava-2.1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="2fdf84dedcaaeabb9d70cde9dbb8aad4eccb80a1">
+        <dex dex="/home/incode8/Desktop/Weather/weather/app/build/intermediates/pre-dexed/debug/rxjava-2.1.0_12d3471a7786462edeec8f075314fc62b9a37c8b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/incode8/.android/build-cache/ae82eaac94077593739ead53067d8dfae9234d2f/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
+        <dex dex="/home/incode8/Desktop/Weather/weather/app/build/intermediates/pre-dexed/debug/classes_0043f9636708155e77fde5c4318433c2e91bede6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/incode8/.gradle/caches/modules-2/files-2.1/org.reactivestreams/reactive-streams/1.0.0/14b8c877d98005ba3941c9257cfe09f6ed0e0d74/reactive-streams-1.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="14b8c877d98005ba3941c9257cfe09f6ed0e0d74">
+        <dex dex="/home/incode8/Desktop/Weather/weather/app/build/intermediates/pre-dexed/debug/reactive-streams-1.0.0_d85c6428e5a2cfc98d7cf7771359be162610e9d3.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/incode8/Desktop/Weather/weather/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
         sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="/home/incode8/Desktop/WeatherApp/weather/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_dc6a869be7db74db98fbcf00f72216815289950e/classes.dex" />
+        <dex dex="/home/incode8/Desktop/Weather/weather/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_22c8f401bfe309f1a26b89d0d87c6fd3461da0ef/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/incode8/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/converter-gson/2.1.0/aa557d71ead91cbf26e0c316a0f593d168303309/converter-gson-2.1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="aa557d71ead91cbf26e0c316a0f593d168303309">
+        <dex dex="/home/incode8/Desktop/Weather/weather/app/build/intermediates/pre-dexed/debug/converter-gson-2.1.0_d12e1a8d6f30faa8d14edf54ec2c0ce86a18e27c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/incode8/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.8.0/c4ba5371a29ac9b2ad6129b1d39ea38750043eff/gson-2.8.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c4ba5371a29ac9b2ad6129b1d39ea38750043eff">
+        <dex dex="/home/incode8/Desktop/Weather/weather/app/build/intermediates/pre-dexed/debug/gson-2.8.0_00ee016ef3a9e8861efb87ac03c828adf526bfbf.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/incode8/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.13.0/a9283170b7305c8d92d25aff02a6ab7e45d06cbe/okio-1.13.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="a9283170b7305c8d92d25aff02a6ab7e45d06cbe">
+        <dex dex="/home/incode8/Desktop/Weather/weather/app/build/intermediates/pre-dexed/debug/okio-1.13.0_82b00c2db7085de517d5cf052efc98e8d1bbb3f3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/incode8/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="6975da39a7040257bd51d21a231b76c915872d38">
+        <dex dex="/home/incode8/Desktop/Weather/weather/app/build/intermediates/pre-dexed/debug/javax.inject-1_c5057bedda6b7d74b05f076541e385a47361c304.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/incode8/.android/build-cache/96d5a3815acf0f2aea23ea7841c7494f72f33bc6/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
+        <dex dex="/home/incode8/Desktop/Weather/weather/app/build/intermediates/pre-dexed/debug/classes_18ad4254e251b90e3faae1035e465675435ed3b2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/incode8/.gradle/caches/modules-2/files-2.1/com.google.dagger/dagger/2.8/55a1aa1cdcfd06b9950ca856e2bc2790e105146a/dagger-2.8.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="55a1aa1cdcfd06b9950ca856e2bc2790e105146a">
+        <dex dex="/home/incode8/Desktop/Weather/weather/app/build/intermediates/pre-dexed/debug/dagger-2.8_f50889abfcfef94dd408ffebe230582521a0fbe5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/incode8/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/25.3.1/support-annotations-25.3.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
+        <dex dex="/home/incode8/Desktop/Weather/weather/app/build/intermediates/pre-dexed/debug/support-annotations-25.3.1_4b37978be0d1a02fea7d6962e7cf28725c509d8b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/incode8/.android/build-cache/40616cf5768a2cd0f1f23be119dd40207b6f7988/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/home/incode8/Desktop/Weather/weather/app/build/intermediates/pre-dexed/debug/classes_64337d6a2dbf7a0855131d0c814a03a204db9113.jar" />
     </item>
 
 </items>

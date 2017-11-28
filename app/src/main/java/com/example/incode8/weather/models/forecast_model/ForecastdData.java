@@ -17,7 +17,7 @@ public class ForecastdData {
     private Integer cnt;
     @SerializedName("list")
     @Expose
-    private java.util.List<com.example.incode8.weather.models.forecast_model.List> list = null;
+    private java.util.List<List> list = null;
     @SerializedName("city")
     @Expose
     private City city;
@@ -46,11 +46,11 @@ public class ForecastdData {
         this.cnt = cnt;
     }
 
-    public java.util.List<com.example.incode8.weather.models.forecast_model.List> getList() {
+    public java.util.List<List> getList() {
         return list;
     }
 
-    public void setList(java.util.List<com.example.incode8.weather.models.forecast_model.List> list) {
+    public void setList(java.util.List<List> list) {
         this.list = list;
     }
 

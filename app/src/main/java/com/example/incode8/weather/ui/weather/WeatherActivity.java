@@ -4,13 +4,22 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.View;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.incode8.weather.R;
+import com.example.incode8.weather.mapper.ImageMapper;
+import com.example.incode8.weather.models.weather_model.WeatherUi;
 import com.example.incode8.weather.ui.base.BaseActivity;
+import com.example.incode8.weather.ui.day_fragment.DayFragment;
 import com.example.incode8.weather.ui.setting.SettingActivity;
+import com.example.incode8.weather.ui.week_fragment.WeekFragment;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 import javax.inject.Inject;
 
@@ -20,8 +29,17 @@ import butterknife.OnClick;
 
 public class WeatherActivity extends BaseActivity implements IWeatherView{
 
-    @BindView(R.id.toolbar)
-    Toolbar mToolbar;
+    @BindView(R.id.temperature)
+    TextView temperatureTextView;
+
+    @BindView(R.id.clouds)
+    TextView cloudsTextView;
+
+    @BindView(R.id.cloudsIcon)
+    ImageView cloudsImageView;
+
+    @BindView(R.id.more_setting)
+    ImageButton moreImageButton;
 
     @Inject
     IWeatherPresenter<IWeatherView> mPresenter;
@@ -35,19 +53,16 @@ public class WeatherActivity extends BaseActivity implements IWeatherView{
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
-
         getActivityComponents().inject(this);
-
         setUnBinder(ButterKnife.bind(this));
-
         mPresenter.onAttach(WeatherActivity.this);
-    }
 
-    @OnClick(R.id.action_settings)
-    void Setting(View v){
-        Intent intent = SettingActivity.getStartIntent(WeatherActivity.this);
-        startActivity(intent);
-        finish();
+        ImageMapper imageMapper = new ImageMapper(getTime());
+
+        temperatureTextView.setText(WeatherUi.temperature);
+        cloudsTextView.setText(WeatherUi.clouds);
+        cloudsImageView.setImageResource(imageMapper.setImage(WeatherUi.icon));
+        showDayFragment();
     }
 
     @Override
@@ -56,4 +71,40 @@ public class WeatherActivity extends BaseActivity implements IWeatherView{
         return true;
     }
 
+    @Override
+    public int getTime() {
+        Calendar calendar = Calendar.getInstance();
+        SimpleDateFormat mdformat = new SimpleDateFormat("HH");
+        return Integer.parseInt(mdformat.format(calendar.getTime()));
+    }
+
+    @Override
+    public void showDayFragment() {
+        getSupportFragmentManager()
+                .beginTransaction()
+                .disallowAddToBackStack()
+                .add(R.id.weather_frame, DayFragment.newInstance(), DayFragment.TAG)
+                .commit();
+    }
+
+    @Override
+    public void showWeekFragment() {
+        getSupportFragmentManager()
+                .beginTransaction()
+                .disallowAddToBackStack()
+                .add(R.id.weather_frame, WeekFragment.newInstance(), WeekFragment.TAG)
+                .commit();
+    }
+
+    @OnClick(R.id.more_setting)
+    void onMoreSetting(View v){
+        Intent intent = SettingActivity.getStartIntent(WeatherActivity.this);
+        startActivity(intent);
+        finish();
+    }
+
+    @Override
+    public void onFragmentDetached(String tag) {
+
+    }
 }

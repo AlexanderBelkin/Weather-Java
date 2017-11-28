@@ -21,7 +21,7 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
  */
 
 public abstract class BaseActivity extends AppCompatActivity
-        implements IBaseView {
+        implements IBaseView, BaseFragment.Callback {
 
     private ProgressDialog progressDialog;
 
@@ -72,5 +72,10 @@ public abstract class BaseActivity extends AppCompatActivity
             mUnBinder.unbind();
         }
         super.onDestroy();
+    }
+
+    @Override
+    public void onFragmentAttached() {
+
     }
 }

@@ -1,5 +1,6 @@
 package com.example.incode8.weather.ui.weather;
 
+import com.example.incode8.weather.data.api.IDataManager;
 import com.example.incode8.weather.ui.base.BasePresenter;
 import com.example.incode8.weather.utils.rx.ISchedulerProvider;
 
@@ -16,17 +17,13 @@ public class WeatherPresenter<V extends IWeatherView> extends BasePresenter<V>
 
     @Inject
     public WeatherPresenter(ISchedulerProvider schedulerProvider,
-                            CompositeDisposable compositeDisposable){
-        super(schedulerProvider, compositeDisposable);
+                            CompositeDisposable compositeDisposable,
+                            IDataManager dataManager){
+        super(schedulerProvider, compositeDisposable, dataManager);
     }
 
     @Override
-    public void getDataWeatherNow() {
-
-    }
-
-    @Override
-    public void getDataWeatherForecast() {
-
+    public void onAttach(V view) {
+        super.onAttach(view);
     }
 }

@@ -5,6 +5,7 @@ import android.util.Log;
 import com.androidnetworking.common.ANConstants;
 import com.androidnetworking.error.ANError;
 import com.example.incode8.weather.R;
+import com.example.incode8.weather.data.api.IDataManager;
 import com.example.incode8.weather.data.network.ApiError;
 import com.example.incode8.weather.utils.AppConstants;
 import com.example.incode8.weather.utils.rx.ISchedulerProvider;
@@ -27,14 +28,29 @@ public class BasePresenter<V extends IBaseView> implements IBasePresenter<V> {
 
     private final ISchedulerProvider mSchedulerProvider;
     private final CompositeDisposable mCompositeDisposable;
+    private final IDataManager mDataManager;
 
     private V mView;
 
     @Inject
     public BasePresenter(ISchedulerProvider schedulerProvider,
-                         CompositeDisposable compositeDisposable) {
+                         CompositeDisposable compositeDisposable,
+                         IDataManager dataManager) {
         this.mSchedulerProvider = schedulerProvider;
         this.mCompositeDisposable = compositeDisposable;
+        this.mDataManager = dataManager;
+    }
+
+    public ISchedulerProvider getSchedulerProvider() {
+        return mSchedulerProvider;
+    }
+
+    public CompositeDisposable getCompositeDisposable() {
+        return mCompositeDisposable;
+    }
+
+    public IDataManager getDataManager() {
+        return mDataManager;
     }
 
     @Override
