@@ -27,10 +27,10 @@ public class SettingActivity extends BaseActivity implements ISettingView{
     @BindView(R.id.day_weather)
     TextView dayTextView;
 
-    @BindView(R.id.week_weather)
+    @BindView(R.id.three_days)
     TextView weekTextView;
 
-    @BindView(R.id.two_week_weather)
+    @BindView(R.id.week_weather)
     TextView twoWeekTextView;
 
     @BindView(R.id.km_weater)
@@ -57,8 +57,35 @@ public class SettingActivity extends BaseActivity implements ISettingView{
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
+        getActivityComponents().inject(this);
         setUnBinder(ButterKnife.bind(this));
+        mPresenter.onAttach(SettingActivity.this);
         onInitComponent();
+        switch (WeatherActivity.pref.get(1)){
+            case "day":
+                setDay(getWindow().getDecorView().getRootView());
+                break;
+            case "threeDay":
+                setThreeDays(getWindow().getDecorView().getRootView());
+                break;
+            case "week":
+                setWeek(getWindow().getDecorView().getRootView());
+                break;
+        }
+        switch (WeatherActivity.pref.get(0)){
+            case "c":
+                setCels(getWindow().getDecorView().getRootView());
+                break;
+            case "f":
+                setFar(getWindow().getDecorView().getRootView());
+        }
+        switch (WeatherActivity.pref.get(2)){
+            case "m/s":
+                setKm(getWindow().getDecorView().getRootView());
+                break;
+            case "Mi/hour":
+                setMi(getWindow().getDecorView().getRootView());
+        }
     }
 
     public static Intent getStartIntent(Context context) {
@@ -84,6 +111,7 @@ public class SettingActivity extends BaseActivity implements ISettingView{
         kmTextView.setTypeface(typeface);
         miTextView.setTypeface(typeface);
 
+
     }
 
     @OnClick(R.id.day_weather)
@@ -91,44 +119,51 @@ public class SettingActivity extends BaseActivity implements ISettingView{
         dayTextView.setTextColor(ContextCompat.getColor(v.getContext(), R.color.dayPrimary));
         weekTextView.setTextColor(ContextCompat.getColor(v.getContext(), R.color.black));
         twoWeekTextView.setTextColor(ContextCompat.getColor(v.getContext(), R.color.black));
+        mPresenter.setUserFrequency(this, "day");
+    }
+
+    @OnClick(R.id.three_days)
+    void setThreeDays(View v){
+        dayTextView.setTextColor(ContextCompat.getColor(v.getContext(), R.color.black));
+        weekTextView.setTextColor(ContextCompat.getColor(v.getContext(), R.color.dayPrimary));
+        twoWeekTextView.setTextColor(ContextCompat.getColor(v.getContext(), R.color.black));
+        mPresenter.setUserFrequency(this, "threeDay");
     }
 
     @OnClick(R.id.week_weather)
     void setWeek(View v){
         dayTextView.setTextColor(ContextCompat.getColor(v.getContext(), R.color.black));
-        weekTextView.setTextColor(ContextCompat.getColor(v.getContext(), R.color.dayPrimary));
-        twoWeekTextView.setTextColor(ContextCompat.getColor(v.getContext(), R.color.black));
-    }
-
-    @OnClick(R.id.two_week_weather)
-    void setTwoWeek(View v){
-        dayTextView.setTextColor(ContextCompat.getColor(v.getContext(), R.color.black));
         weekTextView.setTextColor(ContextCompat.getColor(v.getContext(), R.color.black));
         twoWeekTextView.setTextColor(ContextCompat.getColor(v.getContext(), R.color.dayPrimary));
+        mPresenter.setUserFrequency( this, "week");
     }
 
     @OnClick(R.id.km_weater)
     void setKm(View v){
         miTextView.setTextColor(ContextCompat.getColor(v.getContext(), R.color.black));
         kmTextView.setTextColor(ContextCompat.getColor(v.getContext(), R.color.dayPrimary));
+        mPresenter.setUserSpeed(this, getBaseContext().getString(R.string.km));
     }
 
     @OnClick(R.id.mi_weater)
     void setMi(View v){
         kmTextView.setTextColor(ContextCompat.getColor(v.getContext(), R.color.black));
         miTextView.setTextColor(ContextCompat.getColor(v.getContext(), R.color.dayPrimary));
+        mPresenter.setUserSpeed(this, getBaseContext().getString(R.string.mi));
     }
 
     @OnClick(R.id.cels)
     void setCels(View v){
         celsTextView.setImageResource(R.drawable.celsius);
         farTextView.setImageResource(R.drawable.fahrenheit_unselected);
+        mPresenter.setUserTemperature(this, "c");
     }
 
     @OnClick(R.id.far)
     void setFar(View v){
         celsTextView.setImageResource(R.drawable.celsius_unselected);
         farTextView.setImageResource(R.drawable.fahrenheit);
+        mPresenter.setUserTemperature(this, "f");
     }
 
     @Override

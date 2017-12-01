@@ -4,7 +4,7 @@ import android.app.Application;
 import android.content.Context;
 
 import com.example.incode8.weather.WeatherApplication;
-import com.example.incode8.weather.data.api.IDataManager;
+import com.example.incode8.weather.data.IDataManager;
 import com.example.incode8.weather.di.module.ApplicationModule;
 
 import javax.inject.Singleton;

@@ -1,7 +1,8 @@
 package com.example.incode8.weather.ui.splash;
 
-import com.example.incode8.weather.data.api.IDataManager;
-import com.example.incode8.weather.models.forecast_model.ForecastUI;
+import com.example.incode8.weather.data.IDataManager;
+import com.example.incode8.weather.models.daily_model.DailyModelUi;
+import com.example.incode8.weather.models.forecast_model.ForecastUi;
 import com.example.incode8.weather.models.weather_model.WeatherUi;
 import com.example.incode8.weather.ui.base.BasePresenter;
 import com.example.incode8.weather.utils.rx.ISchedulerProvider;
@@ -34,6 +35,7 @@ public class SplashPresenter <V extends ISplashView> extends BasePresenter<V>
     public void onAttach(V view) {
         super.onAttach(view);
         getWeatherNow();
+        getWeatherForecastDaily();
         getWeatherForecast();
     }
 
@@ -61,10 +63,10 @@ public class SplashPresenter <V extends ISplashView> extends BasePresenter<V>
         getDataManager().getDataWeatherForecast()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Consumer<ForecastUI>() {
+                .subscribe(new Consumer<ForecastUi>() {
                     @Override
-                    public void accept(@NonNull ForecastUI forecastUI) throws Exception {
-                        getMvpView().successForecast(forecastUI);
+                    public void accept(@NonNull ForecastUi forecastUi) throws Exception {
+                        getMvpView().successForecast(forecastUi);
                     }
                 }, new Consumer<Throwable>() {
                     @Override
@@ -73,4 +75,23 @@ public class SplashPresenter <V extends ISplashView> extends BasePresenter<V>
                     }
                 });
     }
+
+    @Override
+    public void getWeatherForecastDaily() {
+        getDataManager().getDataWeatherDaily()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Consumer<DailyModelUi>() {
+                    @Override
+                    public void accept(@NonNull DailyModelUi dailyModelUi) throws Exception {
+                       DailyModelUi dailyModelUi1 = dailyModelUi;
+                    }
+                }, new Consumer<Throwable>() {
+                    @Override
+                    public void accept(@NonNull Throwable throwable) throws Exception {
+                        String test = "test";
+                    }
+                });
+    }
+
 }

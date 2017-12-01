@@ -6,6 +6,6 @@ import java.util.ArrayList;
  * Created by incode8 on 10.08.17.
  */
 
-public class ForecastUI {
+public class ForecastUi {
     public static ArrayList<Forecast> listForecast;
 }

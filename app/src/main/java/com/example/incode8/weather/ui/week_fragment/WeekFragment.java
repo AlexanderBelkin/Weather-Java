@@ -4,32 +4,34 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.StringRes;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.incode8.weather.R;
-import com.example.incode8.weather.adapters.RecyclerAdapterWeather;
 import com.example.incode8.weather.di.component.ActivityComponent;
-import com.example.incode8.weather.models.forecast_model.ForecastUI;
+import com.example.incode8.weather.models.daily_model.DailyModelUi;
+import com.example.incode8.weather.adapter.DailyWeatherRecyclerAdapter;
 import com.example.incode8.weather.ui.base.BaseFragment;
 
 import javax.inject.Inject;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
+import zlc.season.practicalrecyclerview.PracticalRecyclerView;
 
 
 public class WeekFragment extends BaseFragment implements IWeekView {
 
     public static final String TAG = "WeelFragment";
-    private RecyclerAdapterWeather recyclerAdapterWeater;
-    private RecyclerView.LayoutManager layoutManager;
-    private RecyclerView recyclerView;
     private Typeface typeface;
+    private DailyWeatherRecyclerAdapter mAdapter;
 
     @Inject
     IWeekPresenter<IWeekView> mPresenter;
+
+    @BindView(R.id.recyclerViewWeek)
+    PracticalRecyclerView recyclerView;
 
     public static WeekFragment newInstance() {
         Bundle args = new Bundle();
@@ -52,11 +54,10 @@ public class WeekFragment extends BaseFragment implements IWeekView {
         }
         String fontPath = "fonts/CenturyGothicRegular.ttf";
         typeface = Typeface.createFromAsset(getActivity().getAssets(), fontPath);
-        recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
-        layoutManager = new LinearLayoutManager(view.getContext());
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerAdapterWeater = new RecyclerAdapterWeather(ForecastUI.listForecast, view.getContext());
-        recyclerView.setAdapter(recyclerAdapterWeater);
+        mAdapter = new DailyWeatherRecyclerAdapter();
+        mAdapter.addAll(DailyModelUi.listDaily);
+        recyclerView.setLayoutManager( new LinearLayoutManager(view.getContext()));
+        recyclerView.setAdapter(mAdapter);
         return view;
     }
 
@@ -79,4 +80,5 @@ public class WeekFragment extends BaseFragment implements IWeekView {
     protected void setUp(View view) {
 
     }
+
 }

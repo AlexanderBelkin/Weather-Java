@@ -30,6 +30,7 @@ public class WeatherMapper {
         weatherUi.wind = String.valueOf(wind.getSpeed());
         Clouds clouds = weatherData.getClouds();
         weatherUi.cloudiness = String.valueOf(clouds.getAll().intValue());
+
         return weatherUi;
     }
 

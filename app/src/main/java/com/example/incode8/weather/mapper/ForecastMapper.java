@@ -1,7 +1,7 @@
 package com.example.incode8.weather.mapper;
 
 import com.example.incode8.weather.models.forecast_model.Forecast;
-import com.example.incode8.weather.models.forecast_model.ForecastUI;
+import com.example.incode8.weather.models.forecast_model.ForecastUi;
 import com.example.incode8.weather.models.forecast_model.ForecastdData;
 import com.example.incode8.weather.models.forecast_model.List;
 import com.example.incode8.weather.models.forecast_model.Main;
@@ -15,10 +15,10 @@ import java.util.ArrayList;
 
 public class ForecastMapper {
 
-    private static ForecastUI forecastUi = new ForecastUI();
+    private static ForecastUi forecastUi = new ForecastUi();
     private static Forecast forecast;
 
-    public static ForecastUI map(ForecastdData weatherData) {
+    public static ForecastUi map(ForecastdData weatherData) {
         java.util.List<List> listforecast = weatherData.getList();
         forecastUi.listForecast = new ArrayList<>();
         for(List list : listforecast){

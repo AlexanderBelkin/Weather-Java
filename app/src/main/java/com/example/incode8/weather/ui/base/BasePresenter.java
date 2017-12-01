@@ -5,7 +5,7 @@ import android.util.Log;
 import com.androidnetworking.common.ANConstants;
 import com.androidnetworking.error.ANError;
 import com.example.incode8.weather.R;
-import com.example.incode8.weather.data.api.IDataManager;
+import com.example.incode8.weather.data.IDataManager;
 import com.example.incode8.weather.data.network.ApiError;
 import com.example.incode8.weather.utils.AppConstants;
 import com.example.incode8.weather.utils.rx.ISchedulerProvider;

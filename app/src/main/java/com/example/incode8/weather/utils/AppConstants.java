@@ -10,6 +10,7 @@ public class AppConstants {
     // Block of query constants
     public static final String BASE_URL = "http://api.openweathermap.org/";
     public static final String QUERY_FORECAST = "/data/2.5/forecast";
+    public static final String QUERY_FORECAST_DAILY = "/data/2.5/forecast/daily";
     public static final String QEURY_WEATHER = "/data/2.5/weather";
     public static final String CITY_NAME = "q";
     public static final String UNITS_QEURY = "units";

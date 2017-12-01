@@ -5,6 +5,7 @@ import com.example.incode8.weather.di.module.ActivityModule;
 import com.example.incode8.weather.ui.day_fragment.DayFragment;
 import com.example.incode8.weather.ui.setting.SettingActivity;
 import com.example.incode8.weather.ui.splash.SplashActivity;
+import com.example.incode8.weather.ui.three_days.ThreeDaysFragment;
 import com.example.incode8.weather.ui.weather.WeatherActivity;
 import com.example.incode8.weather.ui.week_fragment.WeekFragment;
 
@@ -27,5 +28,7 @@ public interface ActivityComponent {
     void inject(DayFragment fragment);
 
     void inject(WeekFragment fragment);
+
+    void inject(ThreeDaysFragment fragment);
 
 }

@@ -80,11 +80,17 @@
 
     <string name="setting">Setting</string>
     <string name="day">Day</string>
-    <string name="week">Week</string>
-    <string name="two_week">2 Week</string>
+    <string name="week">3 Days</string>
+    <string name="two_week">Week</string>
     <string name="km">m/s</string>
     <string name="mi">Mi/hour</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <!-- user preference -->
 
+    <string name="temperature">temperature</string>
+    <string name="frequency">frequency</string>
+    <string name="speed">speed</string>
 </resources>

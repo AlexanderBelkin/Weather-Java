@@ -1,6 +1,6 @@
 package com.example.incode8.weather.ui.week_fragment;
 
-import com.example.incode8.weather.data.api.IDataManager;
+import com.example.incode8.weather.data.IDataManager;
 import com.example.incode8.weather.ui.base.BasePresenter;
 import com.example.incode8.weather.utils.rx.ISchedulerProvider;
 

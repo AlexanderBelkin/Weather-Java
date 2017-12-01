@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.incode8.weather.R;
-import com.example.incode8.weather.models.forecast_model.ForecastUI;
+import com.example.incode8.weather.models.forecast_model.ForecastUi;
 import com.example.incode8.weather.models.weather_model.WeatherUi;
 import com.example.incode8.weather.ui.base.BaseActivity;
 import com.example.incode8.weather.ui.weather.WeatherActivity;
@@ -33,7 +33,7 @@ public class SplashActivity extends BaseActivity implements ISplashView {
     }
 
     @Override
-    public void successForecast(ForecastUI forecastUI) {
+    public void successForecast(ForecastUi forecastUi) {
         Intent intent = WeatherActivity.getStartIntent(SplashActivity.this);
         startActivity(intent);
         finish();

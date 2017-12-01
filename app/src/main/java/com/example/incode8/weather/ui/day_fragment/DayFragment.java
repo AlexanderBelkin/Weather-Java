@@ -14,6 +14,9 @@ import com.example.incode8.weather.R;
 import com.example.incode8.weather.di.component.ActivityComponent;
 import com.example.incode8.weather.models.weather_model.WeatherUi;
 import com.example.incode8.weather.ui.base.BaseFragment;
+import com.example.incode8.weather.ui.weather.WeatherActivity;
+
+import java.text.DecimalFormat;
 
 import javax.inject.Inject;
 
@@ -101,7 +104,12 @@ public class DayFragment extends BaseFragment implements IDayWeatherView {
         cloudinessTextView.setTypeface(typeface);
         pressureTextView.setText(WeatherUi.pressure + " hPa");
         humidityTextView.setText(WeatherUi.humidity + " %");
-        windTextView.setText(WeatherUi.wind +"  m/s");
+        if(WeatherActivity.pref.get(2).equals(getContext().getString(R.string.km))) {
+            windTextView.setText(WeatherUi.wind + " " + getActivity().getString(R.string.km));
+        }else {
+            Double wind = Double.parseDouble(WeatherUi.wind) * 0.44704;
+            windTextView.setText(new DecimalFormat("#0.00").format(wind) + " " + getActivity().getString(R.string.mi));
+        }
         cloudinessTextView.setText(WeatherUi.cloudiness + " %");
     }
 

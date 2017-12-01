@@ -5,7 +5,7 @@ import android.content.Context;
 
 import com.example.incode8.weather.R;
 import com.example.incode8.weather.data.DataManager;
-import com.example.incode8.weather.data.api.IDataManager;
+import com.example.incode8.weather.data.IDataManager;
 import com.example.incode8.weather.data.api.WeatherApi;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

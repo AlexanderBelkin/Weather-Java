@@ -14,4 +14,8 @@ public interface IWeatherView extends IBaseView {
 
     void showWeekFragment();
 
+    void showThreeDayskFragment();
+
+    void initComponent();
+
 }

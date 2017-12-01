@@ -13,6 +13,9 @@ import com.example.incode8.weather.ui.setting.SettingPresenter;
 import com.example.incode8.weather.ui.splash.ISplashPresenter;
 import com.example.incode8.weather.ui.splash.ISplashView;
 import com.example.incode8.weather.ui.splash.SplashPresenter;
+import com.example.incode8.weather.ui.three_days.IThreeDaysPresenter;
+import com.example.incode8.weather.ui.three_days.IThreeDaysView;
+import com.example.incode8.weather.ui.three_days.ThreeDaysPresenter;
 import com.example.incode8.weather.ui.weather.IWeatherPresenter;
 import com.example.incode8.weather.ui.weather.IWeatherView;
 import com.example.incode8.weather.ui.weather.WeatherPresenter;
@@ -88,5 +91,10 @@ public class ActivityModule {
         return presenter;
     }
 
+    @Provides
+    IThreeDaysPresenter<IThreeDaysView> provideThreeDaysPresenter(
+            ThreeDaysPresenter<IThreeDaysView> presenter){
+        return presenter;
+    }
 
 }

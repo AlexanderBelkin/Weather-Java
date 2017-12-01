@@ -1,8 +1,12 @@
 package com.example.incode8.weather.ui.weather;
 
-import com.example.incode8.weather.data.api.IDataManager;
+import android.app.Activity;
+
+import com.example.incode8.weather.data.IDataManager;
 import com.example.incode8.weather.ui.base.BasePresenter;
 import com.example.incode8.weather.utils.rx.ISchedulerProvider;
+
+import java.util.ArrayList;
 
 import javax.inject.Inject;
 
@@ -25,5 +29,10 @@ public class WeatherPresenter<V extends IWeatherView> extends BasePresenter<V>
     @Override
     public void onAttach(V view) {
         super.onAttach(view);
+    }
+
+    @Override
+    public ArrayList<String> getUserPreference(Activity activity) {
+        return getDataManager().getSharedPreferences(activity);
     }
 }
