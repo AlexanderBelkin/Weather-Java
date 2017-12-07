@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -13,6 +14,9 @@ import android.widget.TextView;
 import com.example.incode8.weather.R;
 import com.example.incode8.weather.ui.base.BaseActivity;
 import com.example.incode8.weather.ui.weather.WeatherActivity;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.location.places.Place;
+import com.google.android.gms.location.places.ui.PlaceAutocomplete;
 
 import javax.inject.Inject;
 
@@ -48,10 +52,15 @@ public class SettingActivity extends BaseActivity implements ISettingView{
     @BindView(R.id.far)
     ImageView farTextView;
 
+    @BindView(R.id.city_user)
+    TextView cityUser;
+
     Typeface typeface;
 
     @Inject
     ISettingPresenter<ISettingView> mPresenter;
+
+    int PLACE_AUTOCOMPLETE_REQUEST_CODE = 1;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -61,6 +70,11 @@ public class SettingActivity extends BaseActivity implements ISettingView{
         setUnBinder(ButterKnife.bind(this));
         mPresenter.onAttach(SettingActivity.this);
         onInitComponent();
+        UserPref();
+    }
+
+    @Override
+    public void UserPref() {
         switch (WeatherActivity.pref.get(1)){
             case "day":
                 setDay(getWindow().getDecorView().getRootView());
@@ -91,6 +105,44 @@ public class SettingActivity extends BaseActivity implements ISettingView{
     public static Intent getStartIntent(Context context) {
         Intent intent = new Intent(context, SettingActivity.class);
         return intent;
+    }
+
+    @OnClick(R.id.search_btn)
+    void setSearch(View v) {
+        initSearch();
+    }
+
+    @OnClick(R.id.city_user)
+    void SetSearchTextView(View v){
+        initSearch();
+    }
+
+    @Override
+    public void initSearch() {
+        try {
+            Intent intent = new PlaceAutocomplete.IntentBuilder(PlaceAutocomplete.MODE_FULLSCREEN)
+                    .build(this);
+            startActivityForResult(intent, PLACE_AUTOCOMPLETE_REQUEST_CODE);
+        }catch (Exception ex){
+            ex.getMessage();
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == PLACE_AUTOCOMPLETE_REQUEST_CODE) {
+            if (resultCode == RESULT_OK) {
+                Place place = PlaceAutocomplete.getPlace(this, data);
+                cityUser.setText(place.getName().toString());
+            } else if (resultCode == PlaceAutocomplete.RESULT_ERROR) {
+                Status status = PlaceAutocomplete.getStatus(this, data);
+                // TODO: Handle the error.
+                Log.i("", status.getStatusMessage());
+
+            } else if (resultCode == RESULT_CANCELED) {
+                // The user canceled the operation.
+            }
+        }
     }
 
     @OnClick(R.id.back_button)

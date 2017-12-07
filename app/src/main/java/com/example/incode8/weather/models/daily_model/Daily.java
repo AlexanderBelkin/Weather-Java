@@ -1,6 +1,7 @@
 package com.example.incode8.weather.models.daily_model;
 
-import com.example.incode8.weather.adapter.RecyclerItemType;
+import com.example.incode8.weather.adapter.Weather.RecyclerItemType;
+import com.example.incode8.weather.models.forecast_model.Forecast;
 
 import java.util.ArrayList;
 
@@ -21,6 +22,8 @@ public class Daily implements ItemType {
     public String dateDaily;
 
     public ArrayList<WeatherDailyParametr> dailyParametrs;
+
+    public ArrayList<Forecast> forecastParametrs;
 
     public boolean isExpand;
 

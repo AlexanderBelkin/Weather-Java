@@ -10,4 +10,8 @@ public interface ISettingView extends IBaseView {
 
     void onInitComponent();
 
+    void UserPref();
+
+    void initSearch();
+
 }

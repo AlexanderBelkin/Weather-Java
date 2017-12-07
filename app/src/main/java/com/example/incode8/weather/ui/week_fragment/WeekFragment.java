@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import com.example.incode8.weather.R;
 import com.example.incode8.weather.di.component.ActivityComponent;
 import com.example.incode8.weather.models.daily_model.DailyModelUi;
-import com.example.incode8.weather.adapter.DailyWeatherRecyclerAdapter;
+import com.example.incode8.weather.adapter.Weather.DailyWeatherRecyclerAdapter;
 import com.example.incode8.weather.ui.base.BaseFragment;
 
 import javax.inject.Inject;

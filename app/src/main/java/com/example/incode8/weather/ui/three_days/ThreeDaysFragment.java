@@ -12,7 +12,7 @@ import com.example.incode8.weather.R;
 import com.example.incode8.weather.di.component.ActivityComponent;
 import com.example.incode8.weather.models.daily_model.Daily;
 import com.example.incode8.weather.models.daily_model.DailyModelUi;
-import com.example.incode8.weather.adapter.DailyWeatherRecyclerAdapter;
+import com.example.incode8.weather.adapter.Weather.DailyWeatherRecyclerAdapter;
 import com.example.incode8.weather.ui.base.BaseFragment;
 
 import java.util.ArrayList;
@@ -51,6 +51,7 @@ public class ThreeDaysFragment extends BaseFragment implements IThreeDaysView {
             setUnBinder(ButterKnife.bind(this, view));
             mPresenter.onAttach(this);
         }
+        arrayListThreeDay =  new ArrayList<>();
         for(int i = 0; i < 3; i++){
             arrayListThreeDay.add(DailyModelUi.listDaily.get(i));
         }

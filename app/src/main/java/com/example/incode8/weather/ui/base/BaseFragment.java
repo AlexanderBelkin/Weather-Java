@@ -39,8 +39,6 @@ public abstract class BaseFragment extends Fragment implements IBaseView {
         mUnBinder = unBinder;
     }
 
-
-
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);

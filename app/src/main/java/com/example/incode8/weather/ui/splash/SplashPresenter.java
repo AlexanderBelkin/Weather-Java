@@ -35,7 +35,6 @@ public class SplashPresenter <V extends ISplashView> extends BasePresenter<V>
     public void onAttach(V view) {
         super.onAttach(view);
         getWeatherNow();
-        getWeatherForecastDaily();
         getWeatherForecast();
     }
 
@@ -84,7 +83,7 @@ public class SplashPresenter <V extends ISplashView> extends BasePresenter<V>
                 .subscribe(new Consumer<DailyModelUi>() {
                     @Override
                     public void accept(@NonNull DailyModelUi dailyModelUi) throws Exception {
-                       DailyModelUi dailyModelUi1 = dailyModelUi;
+                        getMvpView().successDaily(dailyModelUi);
                     }
                 }, new Consumer<Throwable>() {
                     @Override

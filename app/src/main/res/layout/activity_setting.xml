@@ -9,6 +9,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/header_day"/>
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:id="@+id/search_btn"
+        android:src="@drawable/ic_action_name"
+        android:layout_margin="5dp"
+        android:layout_alignParentRight="true"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -51,22 +59,15 @@
         android:layout_marginRight="70dp"
         android:layout_marginLeft="65dp"/>
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Zaporozhzhie"
-        android:textSize="25sp"
+        android:gravity="center"
         android:textColor="@color/dayPrimary"
-        android:layout_marginTop="265dp"
-        android:layout_centerHorizontal="true"
-        />
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/plus_button"
-        android:background="@null"
-        android:layout_alignParentRight="true"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="270dp"
-        android:layout_marginRight="50dp"/>
+        android:id="@+id/city_user"
+        android:clickable="true"
+        android:textSize="20sp" />
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"

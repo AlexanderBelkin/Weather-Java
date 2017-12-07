@@ -1,5 +1,7 @@
 package com.example.incode8.weather.mapper;
 
+import android.util.Log;
+
 import com.example.incode8.weather.models.daily_model.Daily;
 import com.example.incode8.weather.models.daily_model.DailyModel;
 import com.example.incode8.weather.models.daily_model.DailyModelUi;
@@ -7,7 +9,10 @@ import com.example.incode8.weather.models.daily_model.List;
 import com.example.incode8.weather.models.daily_model.Temp;
 import com.example.incode8.weather.models.daily_model.Weather;
 import com.example.incode8.weather.models.daily_model.WeatherDailyParametr;
+import com.example.incode8.weather.models.forecast_model.Forecast;
+import com.example.incode8.weather.models.forecast_model.ForecastUi;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -20,8 +25,9 @@ public class DailyMapper {
 
     private static DailyModelUi dailyModelUi = new DailyModelUi();
     private static Daily daily;
+    private static Forecast forecast;
 
-    public static DailyModelUi map(DailyModel dailyData) {
+    public static DailyModelUi map(DailyModel dailyData) throws ParseException {
         dailyModelUi.listDaily = new ArrayList<>();
         java.util.List<List> dailyList = dailyData.getList();
         for(List dailyItem : dailyList){
@@ -35,14 +41,33 @@ public class DailyMapper {
             Date df = new java.util.Date(dv);
             daily.dateDaily = new SimpleDateFormat("EEE, MMM d").format(df);
             daily.dailyParametrs = new ArrayList<>();
+            daily.forecastParametrs = new ArrayList<>();
             WeatherDailyParametr weatherDailyParametr = new WeatherDailyParametr();
             weatherDailyParametr.pressureDaily = String.valueOf(dailyItem.getPressure().intValue());
             weatherDailyParametr.humidityDaily = String.valueOf(dailyItem.getHumidity().intValue());
             weatherDailyParametr.windDaily = String.valueOf(dailyItem.getSpeed());
             weatherDailyParametr.cloudinessDaily = String.valueOf(dailyItem.getClouds().intValue());
             daily.dailyParametrs.add(weatherDailyParametr);
-            dailyModelUi.listDaily.add(daily);
+            for (Forecast item : ForecastUi.listForecast){
+                if(item.dateForecast.contains(new SimpleDateFormat("yyyy-MM-dd").format(df))){
+                    String date = item.dateForecast.substring(item.dateForecast.length() - 8, item.dateForecast.length() - 3);
+                    if (!date.equals("00:00") && !date.equals("03:00")) {
+                        forecast = new Forecast();
+                        forecast.dateForecast = date;
+                        forecast.temperatureForecast = item.temperatureForecast;
+                        forecast.iconForecast = item.iconForecast;
+                        forecast.cloudsForecast = item.cloudsForecast;
+                        daily.forecastParametrs.add(forecast);
+                    }
+                }
+            }
+            if (daily.forecastParametrs.size() == 0){
+                Log.d("Skip item","forecast parametrs null");
+            } else {
+                dailyModelUi.listDaily.add(daily);
+            }
         }
+        dailyModelUi.listDaily.remove(dailyModelUi.listDaily.size() - 1);
         return dailyModelUi;
     }
 

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ImageButton;
@@ -19,6 +20,10 @@ import com.example.incode8.weather.ui.day_fragment.DayFragment;
 import com.example.incode8.weather.ui.setting.SettingActivity;
 import com.example.incode8.weather.ui.three_days.ThreeDaysFragment;
 import com.example.incode8.weather.ui.week_fragment.WeekFragment;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -52,6 +57,7 @@ public class WeatherActivity extends BaseActivity implements IWeatherView{
 
     public static ArrayList<String> pref = new ArrayList<>();
     private Typeface typeface;
+    private AdView mAdView;
 
     public static Intent getStartIntent(Context context) {
         Intent intent = new Intent(context, WeatherActivity.class);
@@ -65,7 +71,50 @@ public class WeatherActivity extends BaseActivity implements IWeatherView{
         getActivityComponents().inject(this);
         setUnBinder(ButterKnife.bind(this));
         mPresenter.onAttach(WeatherActivity.this);
+        initAds();
         initComponent();
+    }
+
+    private void initAds() {
+        MobileAds.initialize(getApplicationContext(),
+                "ca-app-pub-3940256099942544~3347511713");
+
+        mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+        mAdView.setAdListener(new AdListener() {
+            @Override
+            public void onAdLoaded() {
+                // Code to be executed when an ad finishes loading.
+                Log.i("Ads", "onAdLoaded");
+            }
+
+            @Override
+            public void onAdFailedToLoad(int errorCode) {
+                // Code to be executed when an ad request fails.
+                Log.i("Ads", "onAdFailedToLoad");
+            }
+
+            @Override
+            public void onAdOpened() {
+                // Code to be executed when an ad opens an overlay that
+                // covers the screen.
+                Log.i("Ads", "onAdOpened");
+            }
+
+            @Override
+            public void onAdLeftApplication() {
+                // Code to be executed when the user has left the app.
+                Log.i("Ads", "onAdLeftApplication");
+            }
+
+            @Override
+            public void onAdClosed() {
+                // Code to be executed when when the user is about to return
+                // to the app after tapping on an ad.
+                Log.i("Ads", "onAdClosed");
+            }
+        });
     }
 
     @Override
@@ -121,7 +170,7 @@ public class WeatherActivity extends BaseActivity implements IWeatherView{
         getSupportFragmentManager()
                 .beginTransaction()
                 .disallowAddToBackStack()
-                .add(R.id.weather_frame, DayFragment.newInstance(), DayFragment.TAG)
+                .replace(R.id.weather_frame, DayFragment.newInstance(), DayFragment.TAG)
                 .commit();
     }
 
@@ -130,7 +179,7 @@ public class WeatherActivity extends BaseActivity implements IWeatherView{
         getSupportFragmentManager()
                 .beginTransaction()
                 .disallowAddToBackStack()
-                .add(R.id.weather_frame, WeekFragment.newInstance(), WeekFragment.TAG)
+                .replace(R.id.weather_frame, WeekFragment.newInstance(), WeekFragment.TAG)
                 .commit();
     }
 
@@ -139,7 +188,7 @@ public class WeatherActivity extends BaseActivity implements IWeatherView{
         getSupportFragmentManager()
                 .beginTransaction()
                 .disallowAddToBackStack()
-                .add(R.id.weather_frame, ThreeDaysFragment.newInstance(), ThreeDaysFragment.TAG)
+                .replace(R.id.weather_frame, ThreeDaysFragment.newInstance(), ThreeDaysFragment.TAG)
                 .commit();
     }
 
@@ -148,6 +197,18 @@ public class WeatherActivity extends BaseActivity implements IWeatherView{
         Intent intent = SettingActivity.getStartIntent(WeatherActivity.this);
         startActivity(intent);
         finish();
+    }
+
+    @Override
+    public void onBackPressed() {
+        int count = getFragmentManager().getBackStackEntryCount();
+
+        if (count == 0) {
+            super.onBackPressed();
+            //additional code
+        } else {
+            getFragmentManager().popBackStack();
+        }
     }
 
     @Override

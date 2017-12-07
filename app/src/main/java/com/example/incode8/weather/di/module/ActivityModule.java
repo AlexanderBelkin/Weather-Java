@@ -7,6 +7,9 @@ import com.example.incode8.weather.di.ActivityScope;
 import com.example.incode8.weather.ui.day_fragment.DayWeatherPresenter;
 import com.example.incode8.weather.ui.day_fragment.IDayWeatherPresenter;
 import com.example.incode8.weather.ui.day_fragment.IDayWeatherView;
+import com.example.incode8.weather.ui.hour_weather_fragment.HourWeatherPresenter;
+import com.example.incode8.weather.ui.hour_weather_fragment.IHourWeatherPresenter;
+import com.example.incode8.weather.ui.hour_weather_fragment.IHourWeatherView;
 import com.example.incode8.weather.ui.setting.ISettingPresenter;
 import com.example.incode8.weather.ui.setting.ISettingView;
 import com.example.incode8.weather.ui.setting.SettingPresenter;
@@ -94,6 +97,12 @@ public class ActivityModule {
     @Provides
     IThreeDaysPresenter<IThreeDaysView> provideThreeDaysPresenter(
             ThreeDaysPresenter<IThreeDaysView> presenter){
+        return presenter;
+    }
+
+    @Provides
+    IHourWeatherPresenter<IHourWeatherView> provideHourWeatherPresenter(
+            HourWeatherPresenter<IHourWeatherView> presenter){
         return presenter;
     }
 

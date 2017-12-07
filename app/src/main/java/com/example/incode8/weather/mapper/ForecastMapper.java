@@ -22,8 +22,6 @@ public class ForecastMapper {
         java.util.List<List> listforecast = weatherData.getList();
         forecastUi.listForecast = new ArrayList<>();
         for(List list : listforecast){
-
-            if(list.getDtTxt().contains("15:00")) {
                 forecast = new Forecast();
                 forecast.dateForecast = list.getDtTxt();
                 Weather weather = list.getWeather().get(0);
@@ -33,7 +31,6 @@ public class ForecastMapper {
                 Main main = list.getMain();
                 forecast.temperatureForecast = String.valueOf(main.getTemp().intValue());
                 forecastUi.listForecast.add(forecast);
-            }
 
         }
         return forecastUi;

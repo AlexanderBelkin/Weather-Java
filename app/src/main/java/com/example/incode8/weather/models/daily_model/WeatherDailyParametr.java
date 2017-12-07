@@ -1,6 +1,6 @@
 package com.example.incode8.weather.models.daily_model;
 
-import com.example.incode8.weather.adapter.RecyclerItemType;
+import com.example.incode8.weather.adapter.Weather.RecyclerItemType;
 
 import zlc.season.practicalrecyclerview.ItemType;
 
